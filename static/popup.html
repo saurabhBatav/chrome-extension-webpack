@@ -1,22 +1,60 @@
-<!doctype html>
-
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="styles/popup.css">
-</head>
-
-<body>
-  <div class="container">
-    <h1>Hello World!</h1>
-
-    <p>Edit <u>static/popup.html</u> to change this page!</p>
-
-    <button id="go-to-options" class="button" style="margin-top: 2rem;">Open options page</button>
-  </div>
-
-  <script src="popup.js"></script>
-</body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Popup</title>
+    <link rel="stylesheet" type="text/css" href="styles/popup.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body class="white-preview">
+    <div id="toast-container"></div>
+    <div class="header">
+      <img id="logo" src="" alt="Logo" class="logo" />
+      <div class="btn-container">
+        <i class="fa fa-sun-o" aria-hidden="true"></i>
+        <label class="switch btn-color-mode-switch">
+          <input type="checkbox" name="color_mode" id="color_mode" value="1" />
+          <label
+            for="color_mode"
+            data-on="Dark"
+            data-off="Light"
+            class="btn-color-mode-switch-inner"
+          ></label>
+        </label>
+        <i class="fa fa-moon-o" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div class="main-container">
+      <div class="input-container">
+        <button id="pasteButton" class="icon-button">
+          <svg
+            id="Layer_1"
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 122.88 122.88"
+            width="20"
+            height="20"
+          >
+            <title>Press to paste</title>
+            <path
+              fill="currentcolor"
+              d="M60.54,34.07A7.65,7.65,0,0,1,49.72,23.25l13-12.95a35.38,35.38,0,0,1,49.91,0l.07.08a35.37,35.37,0,0,1-.07,49.83l-13,12.95A7.65,7.65,0,0,1,88.81,62.34l13-13a20.08,20.08,0,0,0,0-28.23l-.11-.11a20.08,20.08,0,0,0-28.2.07l-12.95,13Zm14,3.16A7.65,7.65,0,0,1,85.31,48.05L48.05,85.31A7.65,7.65,0,0,1,37.23,74.5L74.5,37.23ZM62.1,89.05A7.65,7.65,0,0,1,72.91,99.87l-12.7,12.71a35.37,35.37,0,0,1-49.76.14l-.28-.27a35.38,35.38,0,0,1,.13-49.78L23,50A7.65,7.65,0,1,1,33.83,60.78L21.12,73.49a20.09,20.09,0,0,0,0,28.25l0,0a20.07,20.07,0,0,0,28.27,0L62.1,89.05Z"
+            />
+          </svg>
+        </button>
+        <input type="text" id="linkInput" placeholder="Paste link here..." />
+        <button id="postButton">Get Post</button>
+      </div>
+      <div id="loadingSpinner" class="loading-spinner">
+        <i class="fa fa-spinner fa-spin"></i> Loading...
+      </div>
+      <div id="postContainer">
+        <img id="bot" src="/images/newillu.png" alt="Bot" />
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
 </html>

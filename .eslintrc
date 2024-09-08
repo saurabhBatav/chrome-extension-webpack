@@ -1,20 +1,11 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint"
-  ],
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
+  "plugins": ["@typescript-eslint"],
+  "extends": [],
   "env": {
     "browser": true,
     "node": true,
     "mocha": true
   },
-  "rules": {
-    "@typescript-eslint/no-var-requires": 0
-  }
+  "rules": {}
 }

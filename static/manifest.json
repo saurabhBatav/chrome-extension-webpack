@@ -1,36 +1,52 @@
 {
-  "name": "chrome-extension-webpack",
-  "description": "My basic Chrome extension",
-  "version": "0.1.0",
   "manifest_version": 3,
+  "name": "relink",
+  "description": "ReLinkAI ReLinkAI is a powerful Chrome extension designed to enhance your LinkedIn browsing experience. With ReLinkAI, you can effortlessly extract data from any LinkedIn post and intelligently rewrite its content using cutting-edge artificial intelligence technology. ",
+  "version": "3.0.0",
   "background": {
     "service_worker": "serviceWorker.js"
   },
+  "icons": {
+    "16": "images/icon16.png",
+    "24": "images/icon24.png",
+    "32": "images/icon32.png",
+    "48": "images/icon48.png",
+    "96": "images/icon96.png",
+    "128": "images/icon128.png"
+  },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["https://www.linkedin.com/*"],
       "js": ["contentScript.js"]
     }
   ],
-  "permissions": ["storage", "scripting"],
-  "options_ui": {
-    "page": "options.html",
-    "open_in_tab": true
+  "side_panel": {
+    "default_path": "popup.html"
   },
   "action": {
-    "default_title": "My basic Chrome extension",
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "/icons/16x.png",
-      "32": "/icons/32x.png",
-      "48": "/icons/48x.png",
-      "128": "/icons/128x.png"
+    "default_title": "__MSG_name__"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+T",
+        "mac": "MacCtrl+Shift+T"
+      }
     }
   },
-  "icons": {
-    "16": "/icons/16x.png",
-    "32": "/icons/32x.png",
-    "48": "/icons/48x.png",
-    "128": "/icons/128x.png"
-  }
+  "host_permissions": ["https://script.google.com/macros/s/*"],
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; img-src 'self' https://media.licdn.com; frame-src *; style-src 'self' 'unsafe-inline' https://maxcdn.bootstrapcdn.com; font-src 'self' https://maxcdn.bootstrapcdn.com; media-src 'self' https://www.stefanvd.net https://dms.licdn.com; object-src 'none'; connect-src 'self' https://script.google.com https://script.google.com/macros/echo https://script.googleusercontent.com https://accounts.google.com https://www.linkedin.com https://api.groq.com"
+  },
+  "offline_enabled": true,
+  "minimum_chrome_version": "114",
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "sidePanel",
+    "activeTab",
+    "scripting",
+    "clipboardRead",
+    "clipboardWrite"
+  ]
 }
